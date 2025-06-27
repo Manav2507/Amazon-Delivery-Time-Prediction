@@ -1,91 +1,130 @@
-### **📌 Amazon Delivery Time Prediction**  
+# 📦 Amazon Delivery Time Prediction
 
-**Domain:** E-Commerce & Logistics  
-**Skills:** Python, Machine Learning, Regression Modeling, MLflow, Streamlit  
+An end-to-end **machine learning system** to predict **Amazon delivery times** based on features such as traffic, location, time, and product category. Includes an interactive Streamlit UI for real-time predictions and MLflow tracking for model management.
+
+---
+## Demo ScreebShot
+
+![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/4_1.png)
+![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/4_2.png)
+
+## 🧠 Domain
+**E-Commerce & Logistics**  
+Use AI to streamline deliveries, optimize agent performance, and improve customer satisfaction.
 
 ---
 
-## **📖 Project Overview**  
-This project predicts **Amazon delivery times** based on factors like **distance, traffic, and goods category*. It aims to enhance logistics efficiency by providing accurate delivery time estimates.  
+## 🎯 Problem Statement
 
-A **Streamlit-based UI** allows users to input **order details** and receive estimated delivery times.
-
----
-
-## **🔍 Business Use Cases**  
-✔️ **Optimized Delivery Logistics** → Predict delivery times to improve customer experience.  
-✔️ **Dynamic Traffic & Weather Adjustments** → Adjust estimates based on live conditions.  
-✔️ **Agent Performance Evaluation** → Analyze delivery efficiency and identify improvement areas.  
-✔️ **Operational Efficiency** → Optimize **resources & scheduling** based on delivery trends.  
+Delivery time estimation is critical to the logistics and customer experience in e-commerce. This project builds predictive models that estimate delivery durations based on order, agent, traffic, and weather conditions.
 
 ---
 
-## **⚙️ Tech Stack Used**  
-- **Programming:** Python  
-- **Data Processing:** Pandas, NumPy
-- **Machine Learning Models:** Linear Regression - Lasso and Ridge, Random Forest, XGBoost, Neural Networks  
-- **Hyperparameter Tuning:** GridSearchCV, RandomizedSearchCV  
-- **Model Tracking:** MLflow  
-- **Visualization:** Matplotlib, Seaborn  
-- **Deployment:** Streamlit  
+## 🚀 Project Highlights
+
+### ✅ Business Use Cases
+
+- 📍 **Delivery Route Optimization**: Predict delays based on traffic/weather.
+- 🔁 **Resource Scheduling**: Assign deliveries to agents based on predicted load.
+- 🧑‍🔧 **Agent Performance Analysis**: Evaluate based on predicted vs actual delivery times.
+- 🔮 **Dynamic ETA Predictions**: Display real-time delivery estimates to customers.
 
 ---
 
-## **📂 Dataset Details (`amazon_delivery.csv`)**  
-| Feature | Description |
-|---------|------------|
-| **Order_ID** | Unique ID for each order |
-| **Agent_Age** | Age of the delivery agent |
-| **Agent_Rating** | Rating of the delivery agent |
-| **Store_Latitude/Longitude** | Store location coordinates |
-| **Drop_Latitude/Longitude** | Delivery location coordinates |
-| **Order_Date/Time** | When the order was placed |
-| **Pickup_Time** | When the agent picked up the order |
-| **Weather** | Weather conditions during delivery |
-| **Traffic** | Traffic conditions during delivery |
-| **Vehicle** | Type of vehicle used |
-| **Area** | Delivery location (Urban/Metropolitan) |
-| **Category** | Product category (Electronics, Apparel, etc.) |
-| **Delivery_Time** | Actual time taken for delivery (Target variable) |
+## ⚙️ Tech Stack
+
+| Layer              | Tools / Libraries                            |
+|--------------------|-----------------------------------------------|
+| Programming        | Python                                        |
+| ML Libraries       | Scikit-learn, XGBoost, TensorFlow/Keras       |
+| EDA & Visualization| Pandas, NumPy, Matplotlib, Seaborn            |
+| Hyperparameter Tuning | GridSearchCV, RandomizedSearchCV         |
+| Model Tracking     | MLflow                                        |
+| Web App            | Streamlit                                     |
+| Deployment         | Local / AWS (optional)                        |
 
 ---
 
-## **🚀 Project Workflow**  
-### **1️⃣ Data Preparation & Cleaning**  
-🔹 Load and preprocess dataset  
-🔹 Handle missing values, duplicates, and inconsistent data  
-🔹 Standardize categorical features like **Weather & Traffic**  
+## 📂 Dataset Overview
 
-### **2️⃣ Exploratory Data Analysis (EDA)**  
-📊 Distribution of delivery times  
-📊 Impact of **traffic & weather** on delivery times  
-📊 Relationship between **distance & delivery time**  
- 
-### **3️⃣ Model Development & Training**  
-✅ **Models Used:**  
-✔️ Linear Regression  
-✔️ Random Forest Regressor  
-✔️ Gradient Boosting Regressor (XGBoost)  
-✔️ Neural Network (TensorFlow/Keras)  
+**File**: `amazon_delivery.csv`  
+Realistic delivery data with over 10 features:
 
-📌 **Hyperparameter Tuning:**  
-- GridSearchCV  
-- RandomizedSearchCV  
-
-### **5️⃣ Model Tracking & Evaluation**  
-📌 **MLflow** for logging:  
-- **Hyperparameters** (e.g., `max_depth`, `n_estimators`)  
-- **Performance Metrics** (`RMSE`, `R² Score`, `MAE`)  
-- **Model Versions**  
-
-### **6️⃣ Streamlit Deployment**  
-💻 **User Inputs:** Distance, Traffic, Weather, etc.  
-📈 **Outputs:** Estimated Delivery Time  
+| Feature               | Description                            |
+|------------------------|-----------------------------------------|
+| `Order_ID`             | Unique ID per order                     |
+| `Agent_Age`, `Agent_Rating` | Delivery agent profile          |
+| `Store_Lat/Long`       | Store location                         |
+| `Drop_Lat/Long`        | Delivery destination                   |
+| `Order_Time`, `Pickup_Time` | Timing of order and pickup     |
+| `Traffic`, `Weather`   | Environmental factors                  |
+| `Vehicle`, `Category`  | Delivery vehicle & product category     |
+| `Delivery_Time`        | Target variable (in minutes)            |
 
 ---
 
-## **🏆 Key Results**  
-✔️ **Multiple regression models** tracked using MLflow.  
-✔️ **Feature Importance Analysis** revealed that **traffic & distance** significantly impact delivery time.  
-✔️ **Neural Network & XGBoost** performed best, achieving the lowest RMSE.  
-✔️ **A functional Streamlit UI** was built to provide delivery time predictions.  
+## 🧪 Project Workflow
+
+### 🧹 1. Data Cleaning & Feature Engineering
+- Removed nulls and outliers
+- Converted time-based columns to datetime
+- Calculated **Haversine distance** between pickup and drop
+- Encoded categorical features like traffic and weather
+
+### 📊 2. Exploratory Data Analysis (EDA)
+- Delivery time distribution by category, vehicle, traffic
+- Impact of weather, distance, and traffic on time
+- Correlation heatmaps & pairplots
+
+### 🤖 3. Model Development
+Trained and compared multiple regressors:
+
+| Model               | Notes                             |
+|---------------------|-----------------------------------|
+| Linear Regression   | Baseline                          |
+| Ridge/Lasso         | Regularization                    |
+| Random Forest       | Non-linear baseline               |
+| XGBoost             | Best performer (low RMSE)         |
+| Neural Network      | Deep learning model (Keras)       |
+
+### 🎯 4. Hyperparameter Tuning
+- Performed **GridSearchCV** and **RandomizedSearchCV**
+- Tuned key params: `max_depth`, `n_estimators`, `alpha`, etc.
+
+### 📈 5. Model Evaluation
+
+| Metric     | Description                           |
+|------------|----------------------------------------|
+| RMSE       | Root Mean Squared Error               |
+| R² Score   | Model explanatory power               |
+| MAE        | Mean Absolute Error                   |
+
+Best models:
+- ✅ **XGBoost Regressor**
+- ✅ **Keras Neural Network**
+
+### 📘 6. MLflow Tracking
+
+Logged all experiments with:
+- Model version
+- Hyperparameters
+- Metrics (RMSE, R², MAE)
+- Artifacts (plots, models)
+
+### 🌐 7. Streamlit UI
+
+Built a functional **Streamlit web application** to:
+- Accept user inputs (category, traffic, distance, etc.)
+- Return **predicted delivery time**
+- Display model summary and confidence score
+
+---
+
+## 📸 Screenshots (Add if available)
+
+- Delivery prediction UI
+- MLflow experiment logs
+- EDA visualizations
+- Feature importance plot
+
+---
