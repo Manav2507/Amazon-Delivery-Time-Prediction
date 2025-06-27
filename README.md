@@ -118,13 +118,3 @@ Built a functional **Streamlit web application** to:
 - Return **predicted delivery time**
 - Display model summary and confidence score
 
----
-
-## 📸 Screenshots (Add if available)
-
-- Delivery prediction UI
-- MLflow experiment logs
-- EDA visualizations
-- Feature importance plot
-
----
