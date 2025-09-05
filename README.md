@@ -5,8 +5,8 @@ An end-to-end **machine learning system** to predict **Amazon delivery times** b
 ---
 ## Demo ScreebShot
 
-![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/4_1.png)
-![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/4_2.png)
+![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/images/4_1.png)
+![Picture](https://github.com/Manav2507/Amazon-Delivery-Time-Prediction/blob/main/images/4_2.png)
 
 ## 🧠 Domain
 **E-Commerce & Logistics**  
